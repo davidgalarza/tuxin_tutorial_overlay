@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:tuxin_tutorial_overlay/TutorialOverlayUtil.dart';
-import 'package:tuxin_tutorial_overlay/WidgetData.dart';
+import 'package:tuxin_tutorial_overlay2/TutorialOverlayUtil.dart';
+import 'package:tuxin_tutorial_overlay2/WidgetData.dart';
 
 void main() => runApp(MyApp());
 

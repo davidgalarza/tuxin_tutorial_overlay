@@ -2,18 +2,17 @@
 
 an overlay flutter package that can be used for tutorials and walk-through
 
-I was looking for an easier way to add tutorial 
-walk-through to an existing app without cascading more 
+I was looking for an easier way to add tutorial
+walk-through to an existing app without cascading more
 elements into my app.
 
-I wanted a walk-through that I can use as an overlay, that can have 
+I wanted a walk-through that I can use as an overlay, that can have
 several widget behind it being shown, some widgets to allow interaction and some not,
 and also to be able to have specific shapes of holes (rect, oval and so on)
 so I made this :)
 
 btw.. I'm new to flutter programming so I apologize for any mistakes and would
 appreciate any comments. thanks!
- 
 
 ## API
 
@@ -37,7 +36,7 @@ class WidgetData {
       this.padding = 0});
 }
 ```
- 
+
 you use it to define each widget's relevant properties, like padding, enabled/disabled (allow user interaction) and the shape of the hole in the Overlay
 
 `TutorialOverlayUtil.dart` contains the following function:
@@ -58,6 +57,7 @@ void createTutorialOverlay(
     int animationRepeatDelayMilliseconds = 3000
     })
 ```
+
 `tagName` - the name of the overlay screen, to be used later when you want to show it
 
 `context` - the BuildContext of the page
@@ -76,13 +76,13 @@ void createTutorialOverlay(
 
 `description` - a Widget to display on top of the overlay, usually contains instructions on current frame
 
-`highlightCount` - number of times to run the highlight animation 
+`highlightCount` - number of times to run the highlight animation
 
 `animationMilliseconds` - the milliseconds that each direction of animation will take (forward, reverse)
 
 `animationRepeatDelayMilliseconds` - milliseconds to wait before animation repeats itself
 
-I also created two functions to show and hide an overlay.  
+I also created two functions to show and hide an overlay.
 
 ```dart
 void showOverlayEntry({String tagName, bool redisplayOverlayIfSameTAgName = true}) async;
@@ -93,9 +93,10 @@ void hideOverlayEntryIfExists();
 
 `hideOverlayEntryIfExists()` is used to hide the overlay
 
-* please note that you need to use the `createTutorialOverlay()` function only after the elements have been drawn in order to get their proper location and size. 
-in my example I created the overlay at the `initState()` function of my `StatefulWidget`, so in order for the elements
-to be drawn first I needed to execute the function inside a post frame callback:
+- please note that you need to use the `createTutorialOverlay()` function only after the elements have been drawn in order to get their proper location and size.
+  in my example I created the overlay at the `initState()` function of my `StatefulWidget`, so in order for the elements
+  to be drawn first I needed to execute the function inside a post frame callback:
+
 ```dart
 
 import 'package:flutter/scheduler.dart';
@@ -113,15 +114,15 @@ import 'package:flutter/scheduler.dart';
       showOverlayEntry(context, 'example');
     });
 
-``` 
+```
 
 ## Simple Example
 
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:tuxin_tutorial_overlay/TutorialOverlayUtil.dart';
-import 'package:tuxin_tutorial_overlay/WidgetData.dart';
+import 'package:tuxin_tutorial_overlay2/TutorialOverlayUtil.dart';
+import 'package:tuxin_tutorial_overlay2/WidgetData.dart';
 
 void main() => runApp(MyApp());
 
@@ -224,8 +225,8 @@ to execute this code see the example app :)
 
 ## Showcase from example app
 
-![capture](https://github.com/kfirufk/tuxin_tutorial_overlay/raw/master/example/tuxin_tutorial_overlay_example.png)
+![capture](https://github.com/davidgalarza/tuxin_tutorial_overlay/raw/master/example/tuxin_tutorial_overlay_example.png)
 
 #### usage of this package in production
 
-* Folocard -  [http://folocard.com](http://folocard.com)
+- Folocard - [http://folocard.com](http://folocard.com)

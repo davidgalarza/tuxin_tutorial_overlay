@@ -1,11 +1,11 @@
-name: tuxin_tutorial_overlay
+name: tuxin_tutorial_overlay2
 description: an overlay package that can be used for tutorials and walkthrough
-version: 0.5.0
+version: 0.6.0
 author: Kfir Zohar Ozer <ufkfir@icloud.com>
-homepage: https://github.com/kfirufk/tuxin_tutorial_overlay
+homepage: https://github.com/davidgalarza/tuxin_tutorial_overlay
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   synchronized: ^3.0.0
